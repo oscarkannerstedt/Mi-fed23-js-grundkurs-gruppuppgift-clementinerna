@@ -1,6 +1,9 @@
 # Grupp kontrakt
 
 - När vi har daily scrum så bestämmer mötestiden för nästkommande scrum möte. Vi använder oss av Teams. Kamera är frivilligt under möten för att känna sig bekväm.
+- Vi har bestämt att vi har möte i teams varje måndag, onsdag och fredag. Vi bestämmer tid för nästa möte varje gång vi har möte.
+- Jobbar vi mer än 1 person med något så lägger vi till extra "author" så att det syns tydligt vilka som varit med och jobbat på det som commitas.
+- Vi skriver en mall med frågor som vi skall svara på i chatt varje vardag (måndag-fredag).
 - Vi har en sprint planning i början av varje vecka där vi också bestämmer veckans mötetider. Vi ser till att bryta ner projektet i små uppgifter och man jobbar inte på samma uppgift som någon annan för att undvika kod konflikter.
 - Kan man inte vara med på ett möte så hör man av sig via chatt på discord eller teams.
 - Är man sjuk eller frånvarande så hör man av sig så fort som möjligt via chatt på discord eller teams. Om man är sjuk under en lång period så får någon annan som jobbar i samma område ta över. I github kan vi ändra assignees.
