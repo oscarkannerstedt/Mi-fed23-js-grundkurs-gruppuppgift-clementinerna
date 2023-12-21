@@ -15,6 +15,7 @@
 - Vi skriver tydliga commits som är lätta att läsa och förstå vad man har gjort. Är det svårt att förklara koden på liten text så skriver man git commit i terminalen så kommer det upp en ny flik på vscode där man kan skriva en längre commit meddelande.
 - Vi gör commits ofta så att man kan återställa koden så snabbt som möjligt ifall man upptäcker fel.
 - Vi kommer att merge:a genom github och vi gör när varje issue är klar i den branchen som jobbar med. Minst en person som jobbar i relaterad område ska kolla igenom koden/funktionaliteten på sin egna dator innan man merge:ar. 
+- Varje branch ska inkludera namnet på de/dem som jobbar i den.
 - Varje person ska göra minst två pull requests. Man ska göra pull request på sina egna branches men innan en merge ska man skriva i gruppchatten och fråga vem som är tillgänglig att vara en reviewer.
 - Läraren kommer att gå igenom backloggen på fredag den 22/12. Men generellt så kommer vi att använda oss av issues i Github och bryter uppgifter i små delar.
 - Vi har 4 veckor på oss att göra klart hela projektet. Vi räknar med att hela första veckan kommer att gå till planering och wireframe. Märker vi att vi hamnar efter i planeringen så pratar vi om det på möte och så får vi tillsammans jobba ikapp så att vi hinner göra klart allt på 4 veckor.
