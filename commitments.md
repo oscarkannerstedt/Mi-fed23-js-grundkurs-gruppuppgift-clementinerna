@@ -12,6 +12,7 @@
 - Våra kunskapsnivåer skiljer sig lite åt, därför hjälper vi varandra och lär oss av varandra.
 - Vi har lite olika åsikter vad vi tycker är roligt/tråkigt men för att vi ska lära oss så mycket som möjligt så har vi bestämt att vi alla jobbar lite med Html, Css och Javascript.
 - Vi använder oss av en gemensamm ESLint och Prettier konfiguration så att vi delar alla regler.
+- Vi använder oss av camelCase i JS-filen och bindesstreck mellan ord för klass/id i HTML/CSS.
 - Vi skriver tydliga commits som är lätta att läsa och förstå vad man har gjort. Är det svårt att förklara koden på liten text så skriver man git commit i terminalen så kommer det upp en ny flik på vscode där man kan skriva en längre commit meddelande.
 - Vi gör commits ofta så att man kan återställa koden så snabbt som möjligt ifall man upptäcker fel.
 - Vi kommer att merge:a genom github och vi gör när varje issue är klar i den branchen som jobbar med. Minst en person som jobbar i relaterad område ska kolla igenom koden/funktionaliteten på sin egna dator innan man merge:ar. 
