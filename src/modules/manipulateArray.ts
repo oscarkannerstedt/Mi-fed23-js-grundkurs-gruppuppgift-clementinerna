@@ -1,12 +1,12 @@
 import { quizQuestions } from './quizData.ts';
 
-function quizQuestionsShuffle(quizQuestions: any) {
-    for (let i = quizQuestions.length - 1; i > 0; i--) {
+function quizQuestionsShuffle(array: any) {
+    for (let i = array.length - 1; i > 0; i--) {
         const j: number = Math.floor(Math.random() * (i + 1));
-        [quizQuestions[i], quizQuestions[j]] = [quizQuestions[j], quizQuestions[i]];
+        [array[i], array[j]] = [array[j], array[i]];
     }
+    
+    return array;
 };
-
-quizQuestionsShuffle(quizQuestions);
 
 export { quizQuestionsShuffle };
