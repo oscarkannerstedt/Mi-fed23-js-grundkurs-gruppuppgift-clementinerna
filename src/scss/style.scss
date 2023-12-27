@@ -11,3 +11,37 @@
   margin: 0 auto;
   text-align: center;
 }
+
+
+body {
+
+  header {
+    display: flex;
+    justify-content: center;
+
+      h1 {
+      font-family: 'Press Start 2P', monospace; //just because...
+      text-transform: uppercase;
+    }
+  }
+
+  .start-only {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+    .quiz-description {
+      grid-column: 2 /span 2;
+    }
+    .start-button {
+      grid-column: 2 / span 2;
+      margin-right: 50px;
+      margin-left: 50px;
+    }
+  }
+
+  .quiz-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    // Add grid-column when quiz is printed.
+  }
+};
