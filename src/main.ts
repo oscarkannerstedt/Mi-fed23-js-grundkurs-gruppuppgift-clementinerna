@@ -3,11 +3,11 @@ import typescriptLogo from './assets/images/typescript.svg'; // Exempel på hur 
 import { sortArrayByText } from './helpers'; // Exempel på hur ni importerar en funktion från en annan fil
 import { quizQuestionsShuffle } from './modules/manipulateArray';
 import { quizQuestions } from './modules/quizData';
+import { displayQuestion } from './modules/displayQuestion';
 
-const test = [1, 2, 3, 4];
-
-console.log(quizQuestionsShuffle(test))
 console.log(quizQuestionsShuffle(quizQuestions))
+
+displayQuestion(0);
 
 
 /**
