@@ -5,7 +5,7 @@ import { quizQuestionsShuffle } from './modules/manipulateArray';
 import { quizQuestions } from './modules/quizData';
 import { displayQuestion } from './modules/displayQuestion';
 
-console.log(quizQuestionsShuffle(quizQuestions))
+console.log(quizQuestionsShuffle(quizQuestions));
 
 displayQuestion(0);
 
