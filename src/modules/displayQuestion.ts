@@ -1,6 +1,8 @@
 import { quizQuestions } from './quizData';
+import { hidePage } from './removePage';
 
 function displayQuestion(index: number): void {
+  hidePage();
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
