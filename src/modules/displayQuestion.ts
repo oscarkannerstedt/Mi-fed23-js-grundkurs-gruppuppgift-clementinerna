@@ -1,4 +1,5 @@
 import { quizQuestions } from './quizData';
+import { quizQuestionsShuffle } from './manipulateArray';
 
 function displayQuestion(index: number): void {
   const question = quizQuestions[index];
@@ -12,14 +13,16 @@ function displayQuestion(index: number): void {
       question.wrongAnswerTwo,
     ];
 
-    // Shuffle the order of the answers, shuffleArray should be the function that Jessika is made
-    // shuffleArray(answers);
+    // shuffle the order of the answers
+    const shuffledAnswers = quizQuestionsShuffle(answers);
 
-    // Create radio buttons for each answer
-    const answerHTML = answers
+    // shuffle the order of radio buttons
+    const shuffledIndices: number[] = quizQuestionsShuffle([0, 1, 2]);
+
+    const answerHTML = shuffledIndices
       .map(
-        (answer, i) =>
-          `<input type="radio" name="answer" value="${i}"><label>${answer}</label><br>`)
+        (i) =>
+          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`)
       .join('');
 
     quizContainer.innerHTML = `
@@ -35,6 +38,7 @@ function displayQuestion(index: number): void {
     if (submitButton !== null) {
       submitButton.addEventListener('click', () => {
         // Here should the checkAnswer be to check if answer is correct.
+        // call the function that check if answer is correct
       });
     }
   } else {
