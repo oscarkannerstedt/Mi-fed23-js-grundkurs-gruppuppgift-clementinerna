@@ -2,8 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="src/scss/style.css" rel="stylesheet">
+  
+
     <title>Quiz Master</title>
   </head>
   <body>
@@ -14,7 +21,7 @@
 
     <main>
       <!-- Should be hidden when game starts -->
-      <section>
+      <section class="start-only">
         <h3 class="quiz-description" class="quiz-description">Detta quiz består utav 10 frågor, 3 svars alternativ där endast 1 svar är det rätta.
           När man har svarat på 10 frågor så kommer resultatet att visas tillsamans med hur lång tid det tog.
           Väljer man att spela igen så startas quizet om och det kommer då 10 nya frågor.

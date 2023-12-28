@@ -1,9 +1,14 @@
 import './scss/style.scss'; // Importera huvud-SCSS-filen
 import typescriptLogo from './assets/images/typescript.svg'; // Exempel på hur ni importerar bilder
 import { sortArrayByText } from './helpers'; // Exempel på hur ni importerar en funktion från en annan fil
+import { quizQuestionsShuffle } from './modules/manipulateArray';
+import { quizQuestions } from './modules/quizData';
 import { displayQuestion } from './modules/displayQuestion';
 
+console.log(quizQuestionsShuffle(quizQuestions))
+
 displayQuestion(0);
+
 
 /**
  * Här definierar vi en mall för hur vi vill att vår array ska se ut.
@@ -51,4 +56,4 @@ if (container !== null) { // Om HTML-elementet finns
         alt="Blå bakgrund, vita bokstäver ovanpå med texten TS">
     </div>
   `;
-}
+};
