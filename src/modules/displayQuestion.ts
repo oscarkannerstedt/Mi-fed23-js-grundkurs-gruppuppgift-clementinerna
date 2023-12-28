@@ -1,5 +1,5 @@
 import { quizQuestions } from './quizData';
-import { quizQuestionsShuffle } from './manipulateArray';
+import { shuffleArray } from './manipulateArray';
 
 function displayQuestion(index: number): void {
   const question = quizQuestions[index];
@@ -14,10 +14,10 @@ function displayQuestion(index: number): void {
     ];
 
     // shuffle the order of the answers
-    const shuffledAnswers = quizQuestionsShuffle(answers);
+    const shuffledAnswers = shuffleArray(answers);
 
     // shuffle the order of radio buttons
-    const shuffledIndices: number[] = quizQuestionsShuffle([0, 1, 2]);
+    const shuffledIndices: number[] = shuffleArray([0, 1, 2]);
 
     const answerHTML = shuffledIndices
       .map(

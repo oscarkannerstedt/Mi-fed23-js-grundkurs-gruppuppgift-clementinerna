@@ -1,4 +1,4 @@
-function quizQuestionsShuffle(array: string[]) :string[] {
+function shuffleArray(array: any[]) :any[] {
   for (let i = array.length - 1; i > 0; i--) {
     const j: number = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -7,4 +7,4 @@ function quizQuestionsShuffle(array: string[]) :string[] {
   return array;
 };
 
-export { quizQuestionsShuffle };
+export { shuffleArray };
