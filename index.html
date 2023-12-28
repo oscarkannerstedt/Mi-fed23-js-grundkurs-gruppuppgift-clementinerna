@@ -21,8 +21,8 @@
 
     <main>
       <!-- Should be hidden when game starts -->
-      <section class="start-only">
-        <h3 class="quiz-description" class="quiz-description">Detta quiz består utav 10 frågor, 3 svars alternativ där endast 1 svar är det rätta.
+      <section class="start-only" id="start-only">
+        <h3 class="quiz-description" id="quiz-description">Detta quiz består utav 10 frågor, 3 svars alternativ där endast 1 svar är det rätta.
           När man har svarat på 10 frågor så kommer resultatet att visas tillsamans med hur lång tid det tog.
           Väljer man att spela igen så startas quizet om och det kommer då 10 nya frågor.
         </h3>
@@ -30,7 +30,7 @@
       </section>
 
       <!-- Should be hidden first and be showed when game is start -->
-      <section class="quiz-container" id="quiz-container">
+      <section class="quiz-container hidden" id="quiz-container">
       </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
