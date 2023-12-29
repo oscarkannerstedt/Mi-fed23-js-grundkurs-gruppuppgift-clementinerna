@@ -1,5 +1,10 @@
 import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
+import { shuffleArray } from './manipulateArray';
+
+let currentQuestionIndex = 0;
+let correctCount = 0;
+
 
 function displayQuestion(index: number): void {
   hidePage();
@@ -14,14 +19,17 @@ function displayQuestion(index: number): void {
       question.wrongAnswerTwo,
     ];
 
-    // Shuffle the order of the answers, shuffleArray should be the function that Jessika is made
-    // shuffleArray(answers);
+    // shuffle the order of the answers
+    const shuffledAnswers = shuffleArray(answers);
 
-    // Create radio buttons for each answer
-    const answerHTML = answers
+    // shuffle the order of radio buttons
+    const shuffledIndices: number[] = shuffleArray([0, 1, 2]);
+
+    const answerHTML = shuffledIndices
       .map(
-        (answer, i) =>
-          `<input type="radio" name="answer" value="${i}"><label>${answer}</label><br>`)
+        (i) =>
+          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`,
+      )
       .join('');
 
     quizContainer.innerHTML = `
@@ -32,15 +40,44 @@ function displayQuestion(index: number): void {
         <button type="button" id="submitBtn">Submit Answer</button>
       </form>
     `;
-
+    // Shows next question
     const submitButton = document.getElementById('submitBtn');
     if (submitButton !== null) {
       submitButton.addEventListener('click', () => {
-        // Here should the checkAnswer be to check if answer is correct.
+        const selectedAnswerIndex = (document.querySelector(
+          'input[name=\'answer\']:checked',
+        ) as HTMLInputElement)?.value as unknown as number;
+
+        if (selectedAnswerIndex !== undefined) {
+          const selectedAnswer = shuffledAnswers[shuffledIndices[selectedAnswerIndex]];
+          checkAnswer(selectedAnswer, question.rightAnswer);
+
+          if (currentQuestionIndex < 9) {
+            currentQuestionIndex += 1;
+            displayQuestion(currentQuestionIndex);
+          } else {
+            showResult(correctCount);
+          }
+        }
       });
     }
   } else {
-    // here should the function be that show result message when player answered 10 questions
+    showResult(correctCount);
+  }
+}
+
+// function to check if answer is correct
+function checkAnswer(selectedAnswer: string, rightAnswer: string): void {
+  if (selectedAnswer === rightAnswer) {
+    correctCount += 1;
+  }
+}
+
+// I will change this later to a pop-up window when a timer is added
+function showResult(correctCount: number): void {
+  const quizContainer = document.querySelector('#quiz-container');
+  if (quizContainer !== null) {
+    quizContainer.innerHTML = `<h4>You answered ${correctCount} out of 10 questions correctly.</h4>`;
   }
 }
 
