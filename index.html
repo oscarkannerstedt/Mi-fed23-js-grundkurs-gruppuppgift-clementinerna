@@ -33,8 +33,8 @@
 
     <main>
       <!-- Should be hidden when game starts -->
-      <section class="start-only">
-        <h3 class="quiz-description" class="quiz-description">
+      <section class="start-only" id="start-only">
+        <h3 class="quiz-description" id="quiz-description">
           Welcome to our quiz, comprising 10 thought-provoking questions. For
           each query, you'll have three answer options, with only one being
           correct. Upon completing the quiz, your results, along with the time
@@ -46,7 +46,8 @@
       </section>
 
       <!-- Should be hidden first and be showed when game is start -->
-      <section class="quiz-container" id="quiz-container"></section>
+      <section class="quiz-container hidden" id="quiz-container">
+      </section>
     </main>
     <script type="module" src="/src/main.ts"></script>
   </body>

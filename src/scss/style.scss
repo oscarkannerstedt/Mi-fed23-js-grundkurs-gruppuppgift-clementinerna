@@ -44,4 +44,9 @@ body {
     grid-template-columns: repeat(4, 1fr);
     // Add grid-column when quiz is printed.
   }
+
+  
+  .hidden{
+    display: none ;
+  }
 };

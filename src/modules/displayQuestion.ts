@@ -1,10 +1,13 @@
 import { quizQuestions } from './quizData';
+import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
 
+
 function displayQuestion(index: number): void {
+  hidePage();
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
