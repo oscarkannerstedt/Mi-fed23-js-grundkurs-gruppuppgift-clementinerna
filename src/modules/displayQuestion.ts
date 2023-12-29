@@ -25,7 +25,7 @@ function displayQuestion(index: number): void {
     const answerHTML = shuffledIndices
       .map(
         (i) =>
-          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`
+          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`,
       )
       .join('');
 
@@ -41,16 +41,16 @@ function displayQuestion(index: number): void {
     const submitButton = document.getElementById('submitBtn');
     if (submitButton !== null) {
       submitButton.addEventListener('click', () => {
-        const selectedAnswerIndex = document.querySelector(
-          'input[name=\'answer\']:checked'
-        )?.value;
+        const selectedAnswerIndex = (document.querySelector(
+          'input[name=\'answer\']:checked',
+        ) as HTMLInputElement)?.value as unknown as number;
 
         if (selectedAnswerIndex !== undefined) {
           const selectedAnswer = shuffledAnswers[shuffledIndices[selectedAnswerIndex]];
           checkAnswer(selectedAnswer, question.rightAnswer);
 
           if (currentQuestionIndex < 9) {
-            currentQuestionIndex++;
+            currentQuestionIndex += 1;
             displayQuestion(currentQuestionIndex);
           } else {
             showResult(correctCount);
@@ -66,7 +66,7 @@ function displayQuestion(index: number): void {
 // function to check if answer is correct
 function checkAnswer(selectedAnswer: string, rightAnswer: string): void {
   if (selectedAnswer === rightAnswer) {
-    correctCount++;
+    correctCount += 1;
   }
 }
 
