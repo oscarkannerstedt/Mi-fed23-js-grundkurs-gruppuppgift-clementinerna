@@ -1,6 +1,9 @@
 import { quizQuestions } from './quizData';
 import { shuffleArray } from './manipulateArray';
 
+let currentQuestionIndex = 0;
+let correctCount = 0;
+
 function displayQuestion(index: number): void {
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
@@ -22,7 +25,8 @@ function displayQuestion(index: number): void {
     const answerHTML = shuffledIndices
       .map(
         (i) =>
-          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`)
+          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`
+      )
       .join('');
 
     quizContainer.innerHTML = `
@@ -33,16 +37,44 @@ function displayQuestion(index: number): void {
         <button type="button" id="submitBtn">Submit Answer</button>
       </form>
     `;
-
+    // Shows next question
     const submitButton = document.getElementById('submitBtn');
     if (submitButton !== null) {
       submitButton.addEventListener('click', () => {
-        // Here should the checkAnswer be to check if answer is correct.
-        // call the function that check if answer is correct
+        const selectedAnswerIndex = document.querySelector(
+          'input[name=\'answer\']:checked'
+        )?.value;
+
+        if (selectedAnswerIndex !== undefined) {
+          const selectedAnswer = shuffledAnswers[shuffledIndices[selectedAnswerIndex]];
+          checkAnswer(selectedAnswer, question.rightAnswer);
+
+          if (currentQuestionIndex < 9) {
+            currentQuestionIndex++;
+            displayQuestion(currentQuestionIndex);
+          } else {
+            showResult(correctCount);
+          }
+        }
       });
     }
   } else {
-    // here should the function be that show result message when player answered 10 questions
+    showResult(correctCount);
+  }
+}
+
+// function to check if answer is correct
+function checkAnswer(selectedAnswer: string, rightAnswer: string): void {
+  if (selectedAnswer === rightAnswer) {
+    correctCount++;
+  }
+}
+
+// I will change this later to a pop-up window when a timer is added
+function showResult(correctCount: number): void {
+  const quizContainer = document.querySelector('#quiz-container');
+  if (quizContainer !== null) {
+    quizContainer.innerHTML = `<h4>You answered ${correctCount} out of 10 questions correctly.</h4>`;
   }
 }
 
