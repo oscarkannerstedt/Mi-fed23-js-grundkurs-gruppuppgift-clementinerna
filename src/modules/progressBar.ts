@@ -1,4 +1,5 @@
 let progressBar: HTMLElement | null;
+const targetQuestionCount = 10;
 
 function initializeProgressBar(): void {
   progressBar = document.querySelector('#progress-bar');
@@ -7,13 +8,12 @@ function initializeProgressBar(): void {
   }
 }
 
-function updateProgressBar(
-  currentIndex: number,
-  totalQuestions: number,
-  targetQuestions: number,
-): void {
+function updateProgressBar(currentIndex: number): void {
   if (progressBar !== null) {
-    const progressPercentage = Math.min((currentIndex / targetQuestions) * 100, 100);
+    const progressPercentage = Math.min(
+      (currentIndex / targetQuestionCount) * 100,
+      100
+    );
     progressBar.style.width = `${progressPercentage}%`;
   }
 }
