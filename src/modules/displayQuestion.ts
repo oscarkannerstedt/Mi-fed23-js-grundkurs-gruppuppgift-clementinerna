@@ -1,6 +1,7 @@
 import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
+import { initializeProgressBar, updateProgressBar } from './progressBar';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
@@ -18,6 +19,9 @@ function displayQuestion(index: number): void {
       question.wrongAnswerOne,
       question.wrongAnswerTwo,
     ];
+
+    initializeProgressBar();
+    updateProgressBar(currentQuestionIndex, quizQuestions.length, 10);
 
     // shuffle the order of the answers
     const shuffledAnswers = shuffleArray(answers);
