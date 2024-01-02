@@ -35,7 +35,7 @@ function displayQuestion(index: number): void {
       .join('');
 
     quizContainer.innerHTML = `
-    <h4>${question.question}</h4>
+    <h4>${currentQuestionIndex + 1}. ${question.question}</h4>
       <form id="quizForm">
         ${answerHTML}
         <br>
