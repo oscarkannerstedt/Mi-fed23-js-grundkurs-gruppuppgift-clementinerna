@@ -39,7 +39,7 @@ function displayQuestion(index: number): void {
       <form id="quizForm">
         ${answerHTML}
         <br>
-        <button type="button" id="submitBtn">Submit Answer</button>
+        <button type="button" class="submitBtn" id="submitBtn">Submit Answer</button>
       </form>
     `;
     // Shows next question
