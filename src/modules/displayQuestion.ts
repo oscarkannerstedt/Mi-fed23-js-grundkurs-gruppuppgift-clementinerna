@@ -1,10 +1,12 @@
 import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
+import { initializeProgressBar, updateProgressBar } from './progressBar';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
 
+initializeProgressBar();
 
 function displayQuestion(index: number): void {
   hidePage();
@@ -44,18 +46,24 @@ function displayQuestion(index: number): void {
     const submitButton = document.getElementById('submitBtn');
     if (submitButton !== null) {
       submitButton.addEventListener('click', () => {
-        const selectedAnswerIndex = (document.querySelector(
-          'input[name=\'answer\']:checked',
-        ) as HTMLInputElement)?.value as unknown as number;
+        const selectedAnswerIndex = (
+          document.querySelector(
+            'input[name="answer"]:checked',
+          ) as HTMLInputElement
+        )?.value as unknown as number;
 
         if (selectedAnswerIndex !== undefined) {
-          const selectedAnswer = shuffledAnswers[shuffledIndices[selectedAnswerIndex]];
+          const selectedAnswer =
+            shuffledAnswers[shuffledIndices[selectedAnswerIndex]];
           checkAnswer(selectedAnswer, question.rightAnswer);
 
           if (currentQuestionIndex < 9) {
             currentQuestionIndex += 1;
+            updateProgressBar(currentQuestionIndex);
             displayQuestion(currentQuestionIndex);
           } else {
+            currentQuestionIndex += 1;
+            updateProgressBar(currentQuestionIndex);
             showResult(correctCount);
           }
         }

@@ -1,12 +1,15 @@
-function hidePage():void {
-  const start = document.querySelector('#start-only');
-  const startBtn = document.querySelector('#start-button');
-  const quizContainer = document.getElementById('quiz-container');
+function hidePage(): void {
+  const start: HTMLElement | null = document.querySelector('#start-only');
+  const startBtn: HTMLElement | null = document.querySelector('#start-button');
+  const quizContainer: HTMLElement | null =
+    document.getElementById('quiz-container');
 
-  startBtn.addEventListener('click', function() {
-    start.style.display = 'none';
-    quizContainer.style.display = 'block';
-  });  
-}
+  if (startBtn !== null && start !== null && quizContainer !== null) {
+    startBtn.addEventListener('click', function () {
+      start.style.display = 'none';
+      quizContainer.style.display = 'block';
+    });
+  }
+};
 
 export { hidePage };

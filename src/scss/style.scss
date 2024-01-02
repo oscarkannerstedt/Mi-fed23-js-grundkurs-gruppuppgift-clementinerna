@@ -12,14 +12,12 @@
   text-align: center;
 }
 
-
 body {
-
   header {
     display: flex;
     justify-content: center;
 
-      h1 {
+    h1 {
       font-family: 'Press Start 2P', monospace; //just because...
       text-transform: uppercase;
     }
@@ -28,9 +26,9 @@ body {
   .start-only {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    
+
     .quiz-description {
-      grid-column: 2 /span 2;
+      grid-column: 2 / span 2;
     }
     .start-button {
       grid-column: 2 / span 2;
@@ -45,8 +43,19 @@ body {
     // Add grid-column when quiz is printed.
   }
 
-  
-  .hidden{
-    display: none ;
+  .progress-bar-container {
+    width: 100%;
+    background-color: #ddd;
+    .progress-bar {
+      height: 30px;
+      background-color: #4caf50;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+    }
   }
-};
+
+  .hidden {
+    display: none;
+  }
+}
