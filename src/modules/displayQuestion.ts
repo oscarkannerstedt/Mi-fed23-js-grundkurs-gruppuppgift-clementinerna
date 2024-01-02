@@ -30,7 +30,7 @@ function displayQuestion(index: number): void {
     const answerHTML = shuffledIndices
       .map(
         (i) =>
-          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`
+          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`,
       )
       .join('');
 
@@ -48,7 +48,7 @@ function displayQuestion(index: number): void {
       submitButton.addEventListener('click', () => {
         const selectedAnswerIndex = (
           document.querySelector(
-            "input[name='answer']:checked"
+            'input[name="answer"]:checked',
           ) as HTMLInputElement
         )?.value as unknown as number;
 

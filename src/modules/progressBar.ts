@@ -12,7 +12,7 @@ function updateProgressBar(currentIndex: number): void {
   if (progressBar !== null) {
     const progressPercentage = Math.min(
       (currentIndex / targetQuestionCount) * 100,
-      100
+      100,
     );
     progressBar.style.width = `${progressPercentage}%`;
   }
