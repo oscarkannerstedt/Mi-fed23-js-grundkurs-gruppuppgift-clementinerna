@@ -39,6 +39,8 @@ function displayQuestion(index: number): void {
       <form id="quizForm">
         ${answerHTML}
         <br>
+        <span class="correct-count">Correct answer count: ${correctCount}/10</span>
+        <br>
         <button type="button" id="submitBtn">Submit Answer</button>
       </form>
     `;
