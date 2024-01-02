@@ -50,13 +50,12 @@ function displayQuestion(index: number): void {
           document.querySelector(
             'input[name="answer"]:checked',
           ) as HTMLInputElement
-        )?.value as unknown as number;
-
+        )?.value;
+    
         if (selectedAnswerIndex !== undefined) {
-          const selectedAnswer =
-            shuffledAnswers[shuffledIndices[selectedAnswerIndex]];
+          const selectedAnswer = shuffledAnswers[parseInt(selectedAnswerIndex)];
           checkAnswer(selectedAnswer, question.rightAnswer);
-
+    
           if (currentQuestionIndex < 9) {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
@@ -69,6 +68,8 @@ function displayQuestion(index: number): void {
         }
       });
     }
+    
+    
   } else {
     showResult(correctCount);
   }
