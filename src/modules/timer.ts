@@ -1,9 +1,9 @@
 const display = document.querySelector('#display') as HTMLDivElement;
-const startBtn = document.querySelector('#startBtn') as HTMLButtonElement;
 const stopBtn = document.querySelector('#stopBtn') as HTMLButtonElement;
 const resetBtn = document.querySelector('#resetBtn') as HTMLButtonElement;
+const startButton = document.querySelector('#start-button') as HTMLButtonElement;
 
-startBtn.addEventListener('click', start);
+startButton.addEventListener('click', start);
 stopBtn.addEventListener('click', stop);
 resetBtn.addEventListener('click', reset);
 
