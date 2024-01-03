@@ -11,6 +11,7 @@ initializeProgressBar();
 
 function displayQuestion(index: number): void {
   hidePage();
+  shuffleArray(quizQuestions);
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
@@ -67,6 +68,7 @@ function displayQuestion(index: number): void {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             showResult(correctCount);
+            currentQuestionIndex = 0;
           }
         }
       });
@@ -94,4 +96,4 @@ function showResult(correctCount: number): void {
   }
 }
 
-export { displayQuestion };
+export { displayQuestion, currentQuestionIndex };
