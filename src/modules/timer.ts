@@ -1,9 +1,7 @@
-
-
-let display: Element | null = document.querySelector('#display');
-let startBtn: Element | null = document.querySelector('#startBtn');
-let stopBtn: Element | null = document.querySelector('#stopBtn');
-let resetBtn: Element | null = document.querySelector('#resetBtn');
+const display = document.querySelector('#display') as HTMLDivElement;
+const startBtn = document.querySelector('#startBtn') as HTMLButtonElement;
+const stopBtn = document.querySelector('#stopBtn') as HTMLButtonElement;
+const resetBtn = document.querySelector('#resetBtn') as HTMLButtonElement;
 
 startBtn.addEventListener('click', start);
 stopBtn.addEventListener('click', stop);
@@ -13,21 +11,21 @@ let elapsedTime: number = 0;
 let timerInterval: number = 0;
 
 function timeToString(time: number): string {
-  let diffInHours = time / 3600000;
-  let hours = Math.floor(diffInHours);
+  const diffInHours = time / 3600000;
+  const hours = Math.floor(diffInHours);
 
-  let diffInMinutes = (diffInHours - hours) * 60;
-  let minutes = Math.floor(diffInMinutes);
+  const diffInMinutes = (diffInHours - hours) * 60;
+  const minutes = Math.floor(diffInMinutes);
 
-  let diffInSeconds = (diffInMinutes - minutes) * 60;
-  let seconds = Math.floor(diffInSeconds);
+  const diffInSeconds = (diffInMinutes - minutes) * 60;
+  const seconds = Math.floor(diffInSeconds);
 
-  let diffInMseconds = (diffInSeconds - seconds) * 100;
-  let mseconds = Math.floor(diffInMseconds);
+  const diffInMseconds = (diffInSeconds - seconds) * 100;
+  const mseconds = Math.floor(diffInMseconds);
 
-  let formattedMinutes = minutes.toString().padStart(2, "0");
-  let formattedSeconds = seconds.toString().padStart(2, "0");
-  let formattedMseconds = mseconds.toString().padStart(2, "0");
+  const formattedMinutes = minutes.toString().padStart(2, '0');
+  const formattedSeconds = seconds.toString().padStart(2, '0');
+  const formattedMseconds = mseconds.toString().padStart(2, '0');
 
   return `${formattedMinutes}:${formattedSeconds}:${formattedMseconds}`;
 };
@@ -37,7 +35,7 @@ function printDisplay(txt: string): void {
 };
 
 function start(): void {
-  let startTime = Date.now() - elapsedTime;
+  const startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(function printTime() {
     elapsedTime = Date.now() - startTime;
     printDisplay(timeToString(elapsedTime));
