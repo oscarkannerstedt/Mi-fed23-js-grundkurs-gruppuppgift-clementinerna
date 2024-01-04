@@ -1,16 +1,16 @@
 const display = document.querySelector('#display') as HTMLDivElement;
-const stopBtn = document.querySelector('#stopBtn') as HTMLButtonElement;
+// const stopBtn = document.querySelector('#stopBtn') as HTMLButtonElement;
 const resetBtn = document.querySelector('#resetBtn') as HTMLButtonElement;
 const startButton = document.querySelector('#start-button') as HTMLButtonElement;
 
 startButton.addEventListener('click', start);
-stopBtn.addEventListener('click', stop);
+// stopBtn.addEventListener('click', stop);
 resetBtn.addEventListener('click', reset);
 
 let elapsedTime: number = 0;
 let timerInterval: number = 0;
 
-function timeToString(time: number): string {
+export function timeToString(time: number): string {
   const diffInHours = time / 3600000;
   const hours = Math.floor(diffInHours);
 
@@ -30,11 +30,11 @@ function timeToString(time: number): string {
   return `${formattedMinutes}:${formattedSeconds}:${formattedMseconds}`;
 };
 
-function printDisplay(txt: string): void {
+export function printDisplay(txt: string): void {
   display.innerHTML = txt;
 };
 
-function start(): void {
+export function start(): void {
   const startTime = Date.now() - elapsedTime;
   timerInterval = setInterval(function printTime() {
     elapsedTime = Date.now() - startTime;
@@ -42,11 +42,11 @@ function start(): void {
   }, 10);
 };
 
-function stop(): void {
+export function stop(): void {
   clearInterval(timerInterval);
 };
 
-function reset(): void {
+export function reset(): void {
   clearInterval(timerInterval);
   printDisplay('00:00:00');
   elapsedTime = 0;
