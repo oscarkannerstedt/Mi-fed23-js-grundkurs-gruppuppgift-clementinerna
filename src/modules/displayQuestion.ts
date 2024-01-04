@@ -36,7 +36,7 @@ function displayQuestion(index: number): void {
 
     quizContainer.innerHTML = `
     <h4>${question.question}</h4>
-      <form id="quizForm">
+      <form id="quizForm ">
         ${answerHTML}
         <br>
         <button type="button" class="submitBtn" id="submitBtn">Submit Answer</button>
