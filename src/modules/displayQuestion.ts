@@ -2,7 +2,7 @@ import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 import { initializeProgressBar, updateProgressBar } from './progressBar';
-import { start } from './timer';
+import { stop } from './timer';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
