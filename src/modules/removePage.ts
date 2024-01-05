@@ -10,6 +10,6 @@ function hidePage(): void {
       quizContainer.style.display = 'block';
     });
   }
-};
+}
 
 export { hidePage };
