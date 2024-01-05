@@ -73,6 +73,7 @@ function displayQuestion(index: number): void {
             updateProgressBar(currentQuestionIndex);
             showResult(correctCount);
             currentQuestionIndex = 0;
+            correctCount = 0;
           }
         }
       });
