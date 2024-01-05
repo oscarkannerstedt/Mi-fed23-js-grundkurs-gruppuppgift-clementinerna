@@ -2,6 +2,7 @@ import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 import { initializeProgressBar, updateProgressBar } from './progressBar';
+import { removeObjFromArray } from './removeQuestion';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
@@ -65,6 +66,7 @@ function displayQuestion(index: number): void {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             displayQuestion(currentQuestionIndex);
+            removeObjFromArray(question);
           } else {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
