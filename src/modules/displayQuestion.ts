@@ -31,13 +31,17 @@ function displayQuestion(index: number): void {
 
     const answerHTML = shuffledIndices
       .map(
-        (i) =>
-          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`,
-      )
+        (i) => {
+          const radioId = `answer${i}`;
+          return `
+          <input type="radio" name="answer" id="${radioId}" value="${i}" aria-labelledby="label_${radioId}">
+          <label id="label_${radioId}" for="${radioId}">${shuffledAnswers[i]}</label><br>
+          `;
+        })
       .join('');
 
     quizContainer.innerHTML = `
-    <h4>${question.question}</h4>
+    <h4>${currentQuestionIndex + 1}. ${question.question}</h4>
       <form id="quizForm">
         ${answerHTML}
         <br>
