@@ -28,14 +28,13 @@ function displayQuestion(index: number): void {
     const shuffledIndices: number[] = shuffleArray([0, 1, 2]);
 
     const answerHTML = shuffledIndices
-      .map(
-        (i) => {
-          const radioId = `answer${i}`;
-          return `
+      .map((i) => {
+        const radioId = `answer${i}`;
+        return `
           <input type="radio" name="answer" id="${radioId}" value="${i}" aria-labelledby="label_${radioId}">
           <label id="label_${radioId}" for="${radioId}">${shuffledAnswers[i]}</label><br>
           `;
-        })
+      })
       .join('');
 
     quizContainer.innerHTML = `
@@ -57,11 +56,11 @@ function displayQuestion(index: number): void {
             'input[name="answer"]:checked',
           ) as HTMLInputElement
         )?.value;
-    
+
         if (selectedAnswerIndex !== undefined) {
           const selectedAnswer = shuffledAnswers[parseInt(selectedAnswerIndex)];
           checkAnswer(selectedAnswer, question.rightAnswer);
-    
+
           if (currentQuestionIndex < 9) {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
@@ -74,8 +73,6 @@ function displayQuestion(index: number): void {
         }
       });
     }
-    
-    
   } else {
     showResult(correctCount);
   }
