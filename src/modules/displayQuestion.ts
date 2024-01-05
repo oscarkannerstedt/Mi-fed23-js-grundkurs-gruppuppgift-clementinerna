@@ -2,6 +2,7 @@ import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 import { initializeProgressBar, updateProgressBar } from './progressBar';
+import { replay } from './replayQuiz';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
@@ -10,6 +11,7 @@ initializeProgressBar();
 
 function displayQuestion(index: number): void {
   hidePage();
+  shuffleArray(quizQuestions);
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
@@ -69,6 +71,8 @@ function displayQuestion(index: number): void {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             showResult(correctCount);
+            currentQuestionIndex = 0;
+            correctCount = 0;
           }
         }
       });
@@ -87,10 +91,11 @@ function checkAnswer(selectedAnswer: string, rightAnswer: string): void {
 
 // I will change this later to a pop-up window when a timer is added
 function showResult(correctCount: number): void {
-  const quizContainer = document.querySelector('#quiz-container');
+  const quizContainer : HTMLElement | null = document.querySelector('#quiz-container');
   if (quizContainer !== null) {
     quizContainer.innerHTML = `<h4>You answered ${correctCount} out of 10 questions correctly.</h4>`;
+    replay(quizContainer);
   }
 }
 
-export { displayQuestion };
+export { displayQuestion, currentQuestionIndex };
