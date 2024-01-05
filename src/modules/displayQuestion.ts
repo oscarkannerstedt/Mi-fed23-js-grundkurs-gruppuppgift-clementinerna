@@ -9,10 +9,10 @@ let currentQuestionIndex = 0;
 let correctCount = 0;
 
 initializeProgressBar();
+shuffleArray(quizQuestions);
 
 function displayQuestion(index: number): void {
   hidePage();
-  shuffleArray(quizQuestions);
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
@@ -65,11 +65,12 @@ function displayQuestion(index: number): void {
           checkAnswer(selectedAnswer, question.rightAnswer);
 
           if (currentQuestionIndex < 9) {
+            removeObjFromArray(question);
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             displayQuestion(currentQuestionIndex);
-            removeObjFromArray(question);
           } else {
+            removeObjFromArray(question);
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             showResult(correctCount);
