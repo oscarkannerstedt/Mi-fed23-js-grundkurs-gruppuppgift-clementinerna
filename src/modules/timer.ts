@@ -1,10 +1,8 @@
 const display = document.querySelector('#display') as HTMLDivElement;
-// const stopBtn = document.querySelector('#stopBtn') as HTMLButtonElement;
 const resetBtn = document.querySelector('#resetBtn') as HTMLButtonElement;
 const startButton = document.querySelector('#start-button') as HTMLButtonElement;
 
 startButton.addEventListener('click', start);
-// stopBtn.addEventListener('click', stop);
 resetBtn.addEventListener('click', reset);
 
 let elapsedTime: number = 0;
