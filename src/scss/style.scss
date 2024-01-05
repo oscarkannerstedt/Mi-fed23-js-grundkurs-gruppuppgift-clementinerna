@@ -17,6 +17,7 @@ body {
   background-color: rgb(236, 253, 253);
  background: url(src/image/question.jpg);
  background-size: cover;
+ background-repeat: no-repeat;
 
  
  /*background-color: #d3effb;*/
@@ -168,6 +169,7 @@ body {
    font-family: 'DotGothic16', sans-serif;
    font-family: 'Jockey One', sans-serif;
    color: #031e4a ;
+   display: grid;
    
     // Add grid-column when quiz is printed.
   
@@ -274,5 +276,10 @@ font-family: 'Jockey One', sans-serif;
 
 
  
-  
+.sista{
+    color: #e61111;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column: 3 / span 5;
+  }
 
