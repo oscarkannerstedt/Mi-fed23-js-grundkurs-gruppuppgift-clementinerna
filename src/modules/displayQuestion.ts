@@ -33,8 +33,10 @@ function displayQuestion(index: number): void {
       .map((i) => {
         const radioId = `answer${i}`;
         return `
-          <input type="radio" name="answer" id="${radioId}" value="${i}" aria-labelledby="label_${radioId}">
-          <label id="label_${radioId}" for="${radioId}">${shuffledAnswers[i]}</label><br>
+          <label id="label_${radioId}" for="${radioId}">
+           <input type="radio" name="answer" id="${radioId}" value="${i}" aria-labelledby="label_${radioId}">
+           ${shuffledAnswers[i]}
+          </label><br>
           `;
       })
       .join('');
