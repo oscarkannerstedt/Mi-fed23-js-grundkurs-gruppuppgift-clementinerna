@@ -85,7 +85,7 @@ function checkAnswer(selectedAnswer: string, rightAnswer: string): void {
 function showResult(correctCount: number): void {
   const quizContainer = document.querySelector('#quiz-container');
   if (quizContainer !== null) {
-    quizContainer.innerHTML = `<h4>You answered ${correctCount} out of 10 questions correctly.</h4>`;
+    quizContainer.innerHTML = `<h4 class="sista">You answered ${correctCount} out of 10 questions correctly.</h4>`;
   }
 }
 
