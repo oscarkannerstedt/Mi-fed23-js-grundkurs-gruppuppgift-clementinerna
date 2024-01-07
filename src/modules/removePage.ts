@@ -14,6 +14,6 @@ function hidePage(): void {
 
     });
   }
-};
+}
 
 export { hidePage };
