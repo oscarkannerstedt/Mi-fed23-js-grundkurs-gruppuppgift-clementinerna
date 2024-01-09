@@ -2,6 +2,7 @@ import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 import { initializeProgressBar, updateProgressBar } from './progressBar';
+import { stop } from './timer';
 import { replay } from './replayQuiz';
 
 let currentQuestionIndex = 0;
@@ -70,6 +71,7 @@ function displayQuestion(index: number): void {
           } else {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
+            stop();
             showResult(correctCount);
             currentQuestionIndex = 0;
             correctCount = 0;
