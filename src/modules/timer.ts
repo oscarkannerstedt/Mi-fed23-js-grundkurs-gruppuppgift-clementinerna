@@ -38,9 +38,10 @@ export function start(): void {
   }, 10);
 };
 
-export function stop(): void {
+export function stop(): number {
   clearInterval(timerInterval);
-};
+  return elapsedTime;
+}
 
 export function reset(): void {
   clearInterval(timerInterval);
