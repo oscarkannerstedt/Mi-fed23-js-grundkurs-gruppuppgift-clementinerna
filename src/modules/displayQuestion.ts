@@ -3,6 +3,7 @@ import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 import { initializeProgressBar, updateProgressBar } from './progressBar';
 import { stop } from './timer';
+import { replay } from './replayQuiz';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
@@ -11,6 +12,7 @@ initializeProgressBar();
 
 function displayQuestion(index: number): void {
   hidePage();
+  shuffleArray(quizQuestions);
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
@@ -29,14 +31,17 @@ function displayQuestion(index: number): void {
     const shuffledIndices: number[] = shuffleArray([0, 1, 2]);
 
     const answerHTML = shuffledIndices
-      .map(
-        (i) =>
-          `<input type="radio" name="answer" value="${i}"><label>${shuffledAnswers[i]}</label><br>`,
-      )
+      .map((i) => {
+        const radioId = `answer${i}`;
+        return `
+          <input type="radio" name="answer" id="${radioId}" value="${i}" aria-labelledby="label_${radioId}">
+          <label id="label_${radioId}" for="${radioId}">${shuffledAnswers[i]}</label><br>
+          `;
+      })
       .join('');
 
     quizContainer.innerHTML = `
-    <h4>${question.question}</h4>
+    <h4>${currentQuestionIndex + 1}. ${question.question}</h4>
       <form id="quizForm">
         ${answerHTML}
         <br>
@@ -54,11 +59,11 @@ function displayQuestion(index: number): void {
             'input[name="answer"]:checked',
           ) as HTMLInputElement
         )?.value;
-    
+
         if (selectedAnswerIndex !== undefined) {
           const selectedAnswer = shuffledAnswers[parseInt(selectedAnswerIndex)];
           checkAnswer(selectedAnswer, question.rightAnswer);
-    
+
           if (currentQuestionIndex < 9) {
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
@@ -68,12 +73,12 @@ function displayQuestion(index: number): void {
             updateProgressBar(currentQuestionIndex);
             stop();
             showResult(correctCount);
+            currentQuestionIndex = 0;
+            correctCount = 0;
           }
         }
       });
     }
-    
-    
   } else {
     showResult(correctCount);
   }
@@ -88,10 +93,11 @@ function checkAnswer(selectedAnswer: string, rightAnswer: string): void {
 
 // I will change this later to a pop-up window when a timer is added
 function showResult(correctCount: number): void {
-  const quizContainer = document.querySelector('#quiz-container');
+  const quizContainer : HTMLElement | null = document.querySelector('#quiz-container');
   if (quizContainer !== null) {
     quizContainer.innerHTML = `<h4>You answered ${correctCount} out of 10 questions correctly.</h4>`;
+    replay(quizContainer);
   }
 }
 
-export { displayQuestion };
+export { displayQuestion, currentQuestionIndex };

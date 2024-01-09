@@ -1,9 +1,7 @@
 const display = document.querySelector('#display') as HTMLDivElement;
-const resetBtn = document.querySelector('#resetBtn') as HTMLButtonElement;
 const startButton = document.querySelector('#start-button') as HTMLButtonElement;
 
 startButton.addEventListener('click', start);
-resetBtn.addEventListener('click', reset);
 
 let elapsedTime: number = 0;
 let timerInterval: number = 0;
