@@ -1,11 +1,11 @@
-interface quizObject {
+interface IQuizObject {
     question: string,
     rightAnswer: string,
     wrongAnswerOne: string,
     wrongAnswerTwo: string
   };
 
-const quizQuestions: quizObject[] = [
+const quizQuestions: IQuizObject[] = [
   {
     question: 'What is the capital of France?',
     rightAnswer: 'Paris',
