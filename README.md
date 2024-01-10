@@ -17,12 +17,12 @@ Klicka i vilka krav ni har gjort:
 #### Kodkvalitet
 - [X] Koden är korrekt formaterad.
 - [X] Koden innehåller enstaka buggar, men fungerar på det stora hela.
-- [ ] Ni har gjort åtminstone en mobilversion; om ni återanvänder samma layout i tablet/desktop så går det bra.
-- [ ] Sidan ska vara någorlunda snygg (CSS).
+- [X] Ni har gjort åtminstone en mobilversion; om ni återanvänder samma layout i tablet/desktop så går det bra.
+- [X] Sidan ska vara någorlunda snygg (CSS).
 - [X] Ni har checkat av "vanliga misstag" från tidigare uppgifter, såväl HTML & CSS som JavaScript.
-- [ ] Sidan är tillgänglighetsgranskad.
-- [ ] Sidan är validerad.
-- [ ] Ni har gjort en Lighthouse-analys på live-sidan.
+- [X] Sidan är tillgänglighetsgranskad.
+- [X] Sidan är validerad.
+- [X] Ni har gjort en Lighthouse-analys på live-sidan.
 
 #### Funktionsbeskrivning
 - [X] Skapa ett quiz med minst 20 frågor
@@ -31,22 +31,22 @@ Klicka i vilka krav ni har gjort:
 - [X] Om användaren väljer att spela igen, så ska inte samma 10 frågor komma upp på nytt
 - [X] Du ska få poäng för rätt svar
 - [X] Det ska bara visas en fråga åt gången på skärmen
-- [ ] Det ska finnas en tidräkning (uppåt). Tidräkningen ska stanna när alla frågor har besvarats.
-- [ ] Det ska visas en bekräftelseruta som visar hur många frågor spelaren svarade rätt på (av totalt antal frågor), och hur lång tid det tog.
-- [ ] Varje person ska ha gjort minst två pull requests.
+- [X] Det ska finnas en tidräkning (uppåt). Tidräkningen ska stanna när alla frågor har besvarats.
+- [X] Det ska visas en bekräftelseruta som visar hur många frågor spelaren svarade rätt på (av totalt antal frågor), och hur lång tid det tog.
+- [X] Varje person ska ha gjort minst två pull requests.
 
 ### För plus i kanten
 #### Kodkvalitet
 - [X] Koden följer konventioner och praxis.
 - [X] Projektets utförande är ambitiöst och väl genomarbetat. Ni har inte tagit på er för mycket, utan sett till att det ni har är genomarbetat.
-- [ ] Ni har tagit höjd för responsiv design (CSS) och CSS:en är välskriven.
+- [X] Ni har tagit höjd för responsiv design (CSS) och CSS:en är välskriven.
 - [X] Koden är korrekt formaterad med ESLint och Prettier.
 - [X] Projektets kod är självdokumenterande. Där det är otydligt har du skrivit till kommentarer. Exempelvis heter variabler och funktioner på ett sådant sätt att det är tydligt vad de gör.
 - [X] Ni har aktivt arbetat för att minska kodupprepning, men det är OK om det förekommer en del. Ibland kan kodupprepning t.ex. vara bra för att koden blir tydligare att läsa, så all upprepning är inte av ondo.
 - [X] Ingen spaghettikod :spaghetti:
-- [ ] Anonyma funktioner används med omsorg.
+- [X] Anonyma funktioner används med omsorg.
 - [X] Koden och projektet har en logisk struktur.
-- [ ] Ni har skrivit en ordentlig README (projektbeskrivning, skrämdumpar, deltagare i arbetet).
+- [X] Ni har skrivit en ordentlig README (projektbeskrivning, skrämdumpar, deltagare i arbetet).
 
 #### Funktionsbeskrivning
 - [X] Det ska finnas en "progess bar" som visar hur många av frågorna som hittills har besvarats
