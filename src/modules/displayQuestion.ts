@@ -2,6 +2,7 @@ import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 import { initializeProgressBar, updateProgressBar } from './progressBar';
+import { removeObjFromArray } from './removeQuestion';
 import { stop, timeToString } from './timer';
 import { replay } from './replayQuiz';
 
@@ -9,10 +10,10 @@ let currentQuestionIndex = 0;
 let correctCount = 0;
 
 initializeProgressBar();
+shuffleArray(quizQuestions);
 
 function displayQuestion(index: number): void {
   hidePage();
-  shuffleArray(quizQuestions);
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
@@ -65,10 +66,12 @@ function displayQuestion(index: number): void {
           checkAnswer(selectedAnswer, question.rightAnswer);
 
           if (currentQuestionIndex < 9) {
+            removeObjFromArray(question);
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             displayQuestion(currentQuestionIndex);
           } else {
+            removeObjFromArray(question);
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             stop();
