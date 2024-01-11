@@ -14,13 +14,16 @@
 }
 
 body {
-  background-color: rgb(236, 253, 253);
-  background: url('src/image/question.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
+  background: linear-gradient(
+    60deg,
+    #53f2a5,
+    #25aae1,
+    #30dd8a,
+    #2bb673,
+    #206b97,
+   
+  ) no-repeat center center fixed; 
+ 
 /* 
 ----------------------------------------------
 ----------------------- Main ---------------
@@ -246,7 +249,7 @@ body {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(217, 245, 223);
+  background-color: rgb(183, 248, 196);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -276,7 +279,7 @@ body {
 */ 
 .progress-bar {
   height: 30px;
-  background-color: #7cd797;
+  background-color: #11d44b;
   text-align: center;
   line-height: 30px;
   color: white;
