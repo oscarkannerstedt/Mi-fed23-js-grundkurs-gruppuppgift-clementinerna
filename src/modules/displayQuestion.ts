@@ -2,16 +2,18 @@ import { quizQuestions } from './quizData';
 import { hidePage } from './removePage';
 import { shuffleArray } from './manipulateArray';
 import { initializeProgressBar, updateProgressBar } from './progressBar';
+import { removeObjFromArray } from './removeQuestion';
+import { stop, timeToString } from './timer';
 import { replay } from './replayQuiz';
 
 let currentQuestionIndex = 0;
 let correctCount = 0;
 
 initializeProgressBar();
+shuffleArray(quizQuestions);
 
 function displayQuestion(index: number): void {
   hidePage();
-  shuffleArray(quizQuestions);
   const question = quizQuestions[index];
   const quizContainer = document.querySelector('#quiz-container');
 
@@ -66,12 +68,15 @@ function displayQuestion(index: number): void {
           checkAnswer(selectedAnswer, question.rightAnswer);
 
           if (currentQuestionIndex < 9) {
+            removeObjFromArray(question);
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
             displayQuestion(currentQuestionIndex);
           } else {
+            removeObjFromArray(question);
             currentQuestionIndex += 1;
             updateProgressBar(currentQuestionIndex);
+            stop();
             showResult(correctCount);
             currentQuestionIndex = 0;
             correctCount = 0;
@@ -91,11 +96,31 @@ function checkAnswer(selectedAnswer: string, rightAnswer: string): void {
   }
 }
 
-// I will change this later to a pop-up window when a timer is added
+// function to display pop up window with results
 function showResult(correctCount: number): void {
-  const quizContainer : HTMLElement | null = document.querySelector('#quiz-container');
+  const elapsedTime = stop();
+  const quizContainer: HTMLElement | null = document.querySelector('#quiz-container');
+
   if (quizContainer !== null) {
     quizContainer.innerHTML = `<h4 class="sista">You answered ${correctCount} out of 10 questions correctly.</h4>`;
+    const resultMessage = document.createElement('div');
+    resultMessage.className = 'modal';
+    resultMessage.innerHTML = `
+      <h4>You answered ${correctCount} out of 10 questions correctly.</h4>
+      <p>Time taken: ${timeToString(elapsedTime)}</p>
+      <button id="closeResult">Close</button>
+    `;
+
+    const closeButton = resultMessage.querySelector('#closeResult');
+    if (closeButton !== null) {
+      closeButton.addEventListener('click', () => {
+        quizContainer.removeChild(resultMessage);
+      });
+    }
+
+    quizContainer.innerHTML = '';
+    quizContainer.appendChild(resultMessage);
+
     replay(quizContainer);
   }
 }

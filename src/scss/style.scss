@@ -221,7 +221,6 @@ body {
   .grid{
     display: grid;
   }
-
 /*
 ----------------------------------------------
 ----------------------- progress-bar-container ---------------
@@ -234,7 +233,35 @@ body {
   height: 30px;
   background-color: #79aefc;
   margin-top: 15px;
-  
+}
+
+.hidden {
+  display: none;
+} 
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  text-align: center;
+
+  h4 {
+    margin-bottom: 15px;
+  }
+
+  button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 }
 
 /*
