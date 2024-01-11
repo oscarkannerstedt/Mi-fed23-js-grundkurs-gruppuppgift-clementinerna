@@ -13,13 +13,13 @@ function replayOnClick():void {
 }
 
 function replay(element: HTMLElement):void {
-
   if (gamesPlayed < 1) {
     const replayBtn = document.createElement('button');
     replayBtn.innerText = 'Play Again';
+    replayBtn.classList.add('replayBtn');
     replayBtn.addEventListener('click', replayOnClick);
     element.appendChild(replayBtn);
-  } 
+  }
 }
 
 

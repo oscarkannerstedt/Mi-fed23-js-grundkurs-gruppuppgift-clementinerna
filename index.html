@@ -18,6 +18,9 @@
     <meta property="og:image" content="https://quizmaster.com/quizmaster.jpg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Jockey+One&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
       rel="stylesheet"
@@ -32,13 +35,11 @@
     </header>
 
     <main>
-
-      <div class="stopwatch">
+      <div class="stopwatch hidden" id="stopwatch">
         <span id="display">00:00:00</span>
       </div>
-
       <!-- Should be hidden when game starts -->
-      <section class="start-only" id="start-only">
+      <section class="start-only grid" id="start-only">
         <h3 class="quiz-description" id="quiz-description">
           Welcome to our quiz, comprising 10 thought-provoking questions. For
           each query, you'll have three answer options, with only one being
@@ -47,12 +48,12 @@
           the quiz resets, presenting 10 entirely new questions for your
           enjoyment.
         </h3>
-        <button class="start-button" id="start-button">Start quiz</button>
+        <button type="button" class="start-button" id="start-button">Start quiz</button>
       </section>
 
       <!-- Should be hidden first and be showed when game is start -->
       <div class="quiz-container hidden" id="quiz-container"></div>
-      <div class="progress-bar-container" id="progress-bar-container">
+      <div class="progress-bar-container hidden" id="progress-bar-container">
         <div class="progress-bar" id="progress-bar"></div>
       </div>
     </main>

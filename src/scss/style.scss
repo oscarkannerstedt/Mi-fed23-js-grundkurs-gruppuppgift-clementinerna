@@ -1,9 +1,10 @@
 :root {
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family:monospace;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 .app {
@@ -13,74 +14,512 @@
 }
 
 body {
+  background-color: rgb(236, 253, 253);
+  background: url('src/image/question.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+/* 
+----------------------------------------------
+----------------------- Main ---------------
+----------------------------------------------
+*/
+ main{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+ }
+ 
+ /* 
+----------------------------------------------
+----------------------- HEADER ---------------
+----------------------------------------------
+ */
   header {
     display: flex;
     justify-content: center;
+    text-align:center;
+    margin-top: 5%;
+    
+  /* 
+----------------------------------------------
+----------------------- Title Quiz Master ---------------
+----------------------------------------------
+ */
+    
+  h1 {
+    font-family: 'Press Start 2P', monospace; //just because...
+    text-transform: uppercase;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 5px;
+    color:#07028f ;
+    font-size: 2.5em;
+    animation: shadow 5s linear infinite;
+   } 
+  /* Title shadow */ 
+   @keyframes shadow {
+    0% {text-shadow: 15px 12px 13px #53f2a5;
 
-    h1 {
-      font-family: 'Press Start 2P', monospace; //just because...
-      text-transform: uppercase;
     }
-  }
+    50% {
+      text-shadow: -15px 12px 13px #79aefc
+    }
+    100% {
+      text-shadow: 15px 12px 13px #53f256;
 
+    }   
+  }
+;
+ /* 
+----------------------------------------------
+----------------------- Quiz question  ---------------
+----------------------------------------------
+ */
+  h4{
+    background-color: #79aefc;
+    display: inline-block;
+    border: none;
+    border-radius: 7px;
+    margin-left: 25%;
+   }
+    
+   }
+ /* 
+----------------------------------------------
+----------------------- Start page ---------------
+----------------------------------------------
+ */  
   .start-only {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    grid-column: span 5;
 
-    .quiz-description {
-      grid-column: 2 / span 2;
-    }
-    .start-button {
-      grid-column: 2 / span 2;
-      margin-right: 50px;
-      margin-left: 50px;
-    }
+    justify-content: space-evenly;
+
+  /*
+----------------------------------------------
+----------------------- Quiz-description  ---------------
+----------------------------------------------
+  */ 
+  .quiz-description {
+    grid-column: 2 /span 3;
+    text-align:justify;
+    font-size: 1.8em;
+    font-family: 'DotGothic16', sans-serif;
+    font-family: 'Jockey One', sans-serif;
+    color: #032761 ;
   }
 
-  .quiz-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    // Add grid-column when quiz is printed.
-  }
+  /*
+----------------------------------------------
+----------------------- Start button ---------------
+----------------------------------------------
+  */ 
+  .start-button {
+    grid-column: 3 / span 5;
+    margin-top:25px ;
+    justify-content: center;
+    cursor: pointer;
+    
+    justify-content: center;
+    color: #07028f ;
+    background: linear-gradient(
+      60deg,
+      #53f2a5,
+      #25aae1,
+      #30dd8a,
+      #2bb673,
+      #206b97,
+      #25aae1,
+      #30dd8a,
+      #53f2a5
+    ); 
 
-  .progress-bar-container {
-    width: 100%;
-    background-color: #ddd;
-    .progress-bar {
-      height: 30px;
-      background-color: #4caf50;
-      text-align: center;
-      line-height: 30px;
-      color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 2em;
+    padding: 8px 10px 30px;
+    width: 25%;
+    height: 55%;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    animation: bn53bounce 4s infinite;
+    
+  }
+  /* Start button keyframes */
+
+  @keyframes bn53bounce {
+    5%,
+    50% {
+      transform: scale(1);
     }
-  }
-
-  .hidden {
-    display: none;
-  } 
   
-  .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 9999;
+    10% {
+      transform: scale(1);
+    }
+  
+    15% {
+      transform: scale(1);
+    }
+  
+    20% {
+      transform: scale(1) rotate(-5deg);
+    }
+  
+    25% {
+      transform: scale(1) rotate(5deg);
+    }
+  
+    30% {
+      transform: scale(1) rotate(-3deg);
+    }
+  
+    35% {
+      transform: scale(1) rotate(2deg);
+    }
+  
+    40% {
+      transform: scale(1) rotate(0);
+    }
+  }
+ 
+   }
+  }
+
+/*
+----------------------------------------------
+----------------------- Question & answar page---------------
+----------------------------------------------
+*/   
+.quiz-container {
+  grid-template-columns: repeat(5, 1fr);
+  grid-column: span 6;
+   justify-content: center;
+   font-size: 2em;
+   font-weight: bold;
+   font-family: 'DotGothic16', sans-serif;
+   font-family: 'Jockey One', sans-serif;
+   color: #031e4a ;
+
+  }
+
+/*
+----------------------------------------------
+----------------------- Hidden ---------------
+----------------------------------------------
+*/ 
+
+// The page shuold be hidden 
+  .hidden{
+    display: none ;
+  }
+/*
+----------------------------------------------
+-----------------------Grid ---------------
+----------------------------------------------
+*/ 
+// The page shuold be grid
+  .grid{
+    display: grid;
+  }
+/*
+----------------------------------------------
+----------------------- progress-bar-container ---------------
+----------------------------------------------
+*/ 
+.progress-bar-container {
+  grid-template-columns: repeat(5, 1fr);
+  grid-column: span 5;
+  width: 100%;
+  height: 30px;
+  background-color: #79aefc;
+  margin-top: 15px;
+}
+
+.hidden {
+  display: none;
+} 
+
+.modal {
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(217, 245, 223);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  text-align: center;
+
+  h4 {
+    margin-bottom: 15px;
+  }
+
+  button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+
+/*
+----------------------------------------------
+----------------------- Progress steps bar ---------------
+----------------------------------------------
+*/ 
+.progress-bar {
+  height: 30px;
+  background-color: #7cd797;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  
+}
+
+/*
+----------------------------------------------
+----------------------- Submit answer button ---------------
+----------------------------------------------
+*/ 
+.submitBtn {
+  border: none;
+  padding: 0.5em 1.5em;
+  margin-left: 5%;
+  outline: none;
+  color: #ededfc;
+  font-size: 0.7em;
+  font-family:'DotGothic16', sans-serif;
+  font-family: 'Jockey One', sans-serif;
+  
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background: none;
+    
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.45);
+  }
+/* Submit answer button befor & after*/  
+.submitBtn:before,
+.submitBtn:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius:10em;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 105%;
+  height: 105%;
+  content: "";
+  z-index: -2;
+  background-size: 400% 400%;
+  background: linear-gradient(
+      60deg,
+      #53f2a5,
+      #25aae1,
+      #206b97,
+      #30dd8a,
+      #2bb673,
+      #206b97,
+      #25aae1,
+      #53f2a5
+    );
+  }
+  
+/* Filter submit answer button befor*/  
+  .submitBtn:before {
+    -webkit-filter: blur(7px);
+    filter: blur(7px);
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    -webkit-animation: pulse 10s infinite ease;
+    animation: pulse 10s infinite ease;
+  }
+/* Filter submit answer button after*/  
+  .submitBtn:after {
+    -webkit-filter: blur(0.3px);
+    filter: blur(0.3px);
+   
+  }
+/* Hover submit answer button befor*/   
+  .submitBtn:hover:before {
+    width: 115%;
+    height: 115%;
+  }
+
+/*
+----------------------------------------------
+----------------------- label answer ---------------
+----------------------------------------------
+*/ 
+
+ label{
+  padding: 10px 0;
+  font-family: 'DotGothic16', sans-serif;
+  font-family: 'Jockey One', sans-serif;
+
+ }
+
+/*
+----------------------------------------------
+----------------------- Input answer ---------------
+----------------------------------------------
+*/ 
+ input{
+  margin-right: 20px;
+  margin-left: 5%;
+  
+ }
+
+/*
+----------------------------------------------
+----------------------- Correct answer count ---------------
+----------------------------------------------
+*/ 
+  .correct-count{
+    margin-left:15px ;
+    color: #0a05b4;
+  }
+
+/*
+----------------------------------------------
+----------------------- correctly number answer text ---------------
+----------------------------------------------
+*/   
+  .sista{
+    color: #0a05b4;
+    margin-left: 31%;
+  }
+
+/*
+----------------------------------------------
+----------------------- Timer display  ---------------
+----------------------------------------------
+*/ 
+  .stopwatch{
+    background-color:#abfc8b;
+    grid-column:  5/ span 1;
+    padding:10px;
     text-align: center;
-  
-    h4 {
-      margin-bottom: 15px;
-    }
-  
-    button {
-      padding: 10px 15px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      cursor: pointer;
+    border:none;
+    border-radius: 20px;
+    font-size: 2em;
+    color: #0a05b4;
+    font-weight: bold;
+    max-width: 75%;
+   
+  }
+
+/*
+----------------------------------------------
+----------------------- Play again button  ---------------
+----------------------------------------------
+*/ 
+  .replayBtn{
+    background: linear-gradient(
+      60deg,
+      #0a05b4,
+      #53f2a5
+    );
+    font-family: 'DotGothic16', sans-serif;
+    font-family: 'Jockey One', sans-serif;
+    color: #fcf7f8;
+    font-size: 1em;
+    margin-left: 42%;
+    border:none;
+    border-radius: 10px;
+    padding:8px 25px 8px;
+    animation: blink 6s linear infinite;
+  }
+/* keyframes blink button */   
+  @keyframes blink {
+    50%{
+      opacity: 0
+    }  
+  }
+
+/*
+----------------------------------------------
+----------------------- Responsive   ---------------
+----------------------------------------------
+*/ 
+
+/* Desktop responsive */
+  @media screen and (max-width:1200px){
+    body{
+      background-size: cover;
+      font-size: 0.8em;
+     
+      main{
+      
+        width: auto;
+        grid-column: span 5;
+       
+      }
     }
   }
+
+/* Tablet responsive */
+  @media screen and (max-width:900px){
+    body{
+      background-size: cover;
+      font-size: 0.8em;
+     
+      main{
+        width: auto;
+        grid-column: span 12;
+        .start-only {
+          margin-left: 0;
+          .start-button {
+            font-size: 1.2em;
+            text-align: center;
+            width: 32%;
+            height: 10%;
+       
+      } } }
+    }
+  }
+
+/* Moblie responsive */  
+  @media screen and (max-width:600px){
+    body{
+
+      main{
+        width: auto;
+      
+        .start-only {
+          margin-left: 0px;
+          .start-button {
+            font-size: 1.2em;
+            text-align: center;
+            width: 32%;
+            height: 10%;
+          }
+      }
+      .quiz-container {
+        justify-content: center;
+        font-size: 1.5em;
+
+       }
+       .sista{
+           margin-left: 23%;
+         }
+         
+         .replayBtn{
+          margin-left: 38%;
+      } 
+      
+      .stopwatch{
+        font-size: 1.3em;
+      }
+       
+      }
+  
+    }
 }

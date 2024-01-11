@@ -35,8 +35,10 @@ function displayQuestion(index: number): void {
       .map((i) => {
         const radioId = `answer${i}`;
         return `
-          <input type="radio" name="answer" id="${radioId}" value="${i}" aria-labelledby="label_${radioId}">
-          <label id="label_${radioId}" for="${radioId}">${shuffledAnswers[i]}</label><br>
+          <label id="label_${radioId}" for="${radioId}">
+           <input type="radio" name="answer" id="${radioId}" value="${i}" aria-labelledby="label_${radioId}">
+           ${shuffledAnswers[i]}
+          </label><br>
           `;
       })
       .join('');
@@ -48,7 +50,7 @@ function displayQuestion(index: number): void {
         <br>
         <span class="correct-count">Correct answer count: ${correctCount}/10</span>
         <br>
-        <button type="button" id="submitBtn">Submit Answer</button>
+        <button type="button" class="submitBtn" id="submitBtn">Submit Answer</button>
       </form>
     `;
     // Shows next question
@@ -100,6 +102,7 @@ function showResult(correctCount: number): void {
   const quizContainer: HTMLElement | null = document.querySelector('#quiz-container');
 
   if (quizContainer !== null) {
+    quizContainer.innerHTML = `<h4 class="sista">You answered ${correctCount} out of 10 questions correctly.</h4>`;
     const resultMessage = document.createElement('div');
     resultMessage.className = 'modal';
     resultMessage.innerHTML = `
