@@ -1,4 +1,5 @@
 # Quiz Master
+Try the [GitHub Pages Demo](https://medieinstitutet.github.io/fed23d-javascript-grundkurs-gruppuppgift-clementinerna/).
 
 ## Authors
 @armin-164
@@ -33,14 +34,19 @@ Quiz Master is a game with the following structure.
 
 
 ## Screenshots
+### Start screen, desktop
 ![Start screen, desktop](/src/assets/images/quiz-start-screen-dt.png "Start screen, desktop")
 
+### Question, desktop
 ![Question, desktop](/src/assets/images/quiz-question-dt.png "Question, desktop")
 
+### Game over, desktop
 ![Game over, desktop](/src/assets/images/quiz-game-over-dt.png "Game over, desktop")
 
+### Question, tablet
 ![Question, tablet](/src/assets/images/quiz-question-tablet.png "Question, tablet")
 
+### Question, tablet
 ![Question, mobile](/src/assets/images/quiz-question-mobile.png "Question, mobile")
 
 ## Validation reports
