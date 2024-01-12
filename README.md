@@ -1,3 +1,59 @@
+# Quiz Master
+
+## Authors
+@armin-164
+@jessworks
+@Montadar0
+@Fatimaazizassi
+@oscarkannerstedt
+
+## Index
+1. Description
+2. Tech stack
+3. Screenshots
+4. Validation reports
+5. Lighthouse
+
+
+## Description
+Quiz Master is a game with the following structure.
+- The game consists of 20 multiple-choice questions where only one answer is correct. 
+- One round consists of ten questions with the option to play another round. 
+- Both questions and multiple-choice answers are shuffled and only appear once, even if the game is played another round. 
+- Press ‘start quiz’ button to start game. A stopwatch starts rolling and questions appear one at a time. 
+- Answer a question and press the ‘submit answer’ button for the next question to appear. 
+- A progress bar shows number of questions answered and a counter shows number of correct answers.  
+- When the first round is done the stopwatch pauses, a ‘play again’ button and a pop-up appears. The pop-up shows the game-score and game-time. 
+- When the ‘play again’ button is pressed the stopwatch is reset, and the game begins again using the remaining ten questions. 
+
+## Tech stack
+- Html & Css/Scss
+- Javascript/Typescript
+- Prettier & ESLint
+
+
+## Screenshots
+![Start screen, desktop](/src/assets/images/quiz-start-screen-dt.png "Start screen, desktop")
+
+![Question, desktop](/src/assets/images/quiz-question-dt.png "Question, desktop")
+
+![Game over, desktop](/src/assets/images/quiz-game-over-dt.png "Game over, desktop")
+
+![Question, tablet](/src/assets/images/quiz-question-tablet.png "Question, tablet")
+
+![Question, mobile](/src/assets/images/quiz-question-mobile.png "Question, mobile")
+
+## Validation reports
+![Validation HTML](/validation/html%20validation.png "Validation HTML")
+
+![Validation CSS](/validation/css%20validation.png "Validation CSS")
+
+## Lighthouse
+![Lighthouse report](/validation/lighthouse.png "Lighthouse report")
+
+
+
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/ZejtqupA)
 # Projektmall FED23D
 Läs instruktionerna på kurswebben för att komma igång.
