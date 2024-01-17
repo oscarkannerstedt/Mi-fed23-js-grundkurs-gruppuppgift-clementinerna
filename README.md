@@ -1,5 +1,5 @@
 # Quiz Master
-Try the [GitHub Pages Demo](https://oscarkannerstedt.github.io/Mi-fed23-js-grundkurs-gruppuppgift-clementinerna/).
+Try the [GitHub Pages Demo](https://medieinstitutet.github.io/fed23d-javascript-grundkurs-gruppuppgift-clementinerna/).
 
 ## Authors
 @armin-164
