@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  'base': '/fed23d-javascript-grundkurs-gruppuppgift-clementinerna/'
+  'base': '/Mi-fed23-js-grundkurs-gruppuppgift-clementinerna/'
 });
